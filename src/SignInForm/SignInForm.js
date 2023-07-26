@@ -2,10 +2,12 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../SignInForm/SignInForm.css'
-
+import ViewExpence from '../Expense/ViewExpence'
 
 const SignInForm = () => {
+  const navigate=useNavigate()
   const [enteredEmail,setEmailValue]=useState('')
   const [enteredPassword,setPasswordValue]=useState('')
   const [EmailError,setEmailError]=useState(true)
@@ -41,8 +43,10 @@ const SignInForm = () => {
       const { EmailValue, PasswordValue } = item;
       return EmailValue === enteredEmail && PasswordValue === enteredPassword;
     });
+    console.log(result)
+
     if (result.length > 0) {
-      alert("Logged in successfully");
+      navigate('/ViewExpence')
     } else {
       alert("Invalid email or password");
     }
