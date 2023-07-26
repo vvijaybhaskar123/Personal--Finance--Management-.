@@ -1,0 +1,78 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.create-formExpence-container{
+    width: 20vw;
+   border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    
+}
+.create-formExpence-container label{
+   margin: 5px 0px 3px 10px;
+}
+.create-formExpence-container input{
+margin: 10px 10px 10px 10px;
+ padding: 10px 25px 10px 15px; 
+ border: 2px solid green;
+}
+.create-formExpence-container select{
+margin: 10px 10px 10px 10px;
+ padding: 10px 25px 10px 15px; 
+ border: 2px solid green;
+}
+ /* .cancel {
+width: 10vw;
+padding:5px ;
+margin-top: 15px;
+border-radius: 10px;
+   
+}
+.Create{
+    width: 10vw;
+    padding:5px ;
+margin-top: 15px;
+border-radius: 10px;
+margin-left: 65px;
+} */
+.cancel-create{
+    margin-top: 30px;
+    width: 20vw;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cancel{
+    width:9vw ;
+    padding: 6px;
+  border-radius: 3px;
+}
+.Create{
+    width:9vw ;
+    padding: 6px;
+    border-radius: 3px;
+}
+@media (max-width: 1280px) {
+    .create-formExpence-container{
+        width: 80vw;
+    }
+    .cancel-create{
+        margin-top: 20px;
+        width: 80vw;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .cancel,
+    .Create {
+      width: 35vw;
+    }
+}

@@ -11,7 +11,7 @@ const SignUpForm = () => {
   const [EmailError,setEmailError]=useState(true)
   const [passwordError,setPasswordError]=useState(true)
   const [conformpasswordError,setconformPasswordError]=useState(true)
-  const [data,setData]=useState([])
+
 
   const EmailChangeHandler =(e)=>{
     setEmailValue(e.target.value)

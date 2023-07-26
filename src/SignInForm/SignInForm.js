@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../SignInForm/SignInForm.css'
-import ViewExpence from '../Expense/ViewExpence'
+
 
 const SignInForm = () => {
   const navigate=useNavigate()
@@ -46,6 +46,7 @@ const SignInForm = () => {
     console.log(result)
 
     if (result.length > 0) {
+      localStorage.setItem('loginedDetails', JSON.stringify(result[0]));
       navigate('/ViewExpence')
     } else {
       alert("Invalid email or password");

@@ -1,17 +1,27 @@
+
+
+
 import React from 'react'
-import '../CreateExpence/CreateExpence.css'
+
+import { useParams } from 'react-router-dom';
+import  '../Edit/UpdtateExpence.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const CreateExpence = () => {
-  const [emailValue, setEmail] = useState('');
+const UpdtateExpence  = () => {
 
+    const { id } = useParams();
   const naviagte=useNavigate()
-  const [nameValue,setName]=useState('')
-  const [desciptionValue,setdesciption]=useState('')
-  const [categoryValue,seCategory]=useState('')
-  const [dateOfExpenceValue,setdateOfExpence]=useState('')
-  const [expenenceAmoutValue,setexpenenceAmout]=useState('')
+  const data = JSON.parse(localStorage.getItem('createExpenceData'));
+  const item = data[id];
+  console.log(item)
+
+  const [emailValue, setEmail] = useState(item?.emailValue || '');
+  const [nameValue, setName] = useState(item?.nameValue || '');
+  const [desciptionValue, setdesciption] = useState(item?.desciptionValue || '');
+  const [categoryValue, seCategory] = useState(item?.categoryValue || '');
+  const [dateOfExpenceValue, setdateOfExpence] = useState(item?.dateOfExpenceValue || '');
+  const [expenenceAmoutValue, setexpenenceAmout] = useState(item?.expenenceAmoutValue || '');
 
   const nameHandler=(e)=>{
     setName(e.target.value)
@@ -30,7 +40,7 @@ const CreateExpence = () => {
   }
   const handleSubmit =(e)=>{
     e.preventDefault()
-    if(nameValue==="" || emailValue==="" || desciptionValue==="" ||categoryValue===""||dateOfExpenceValue===""||expenenceAmoutValue===""){
+    if(nameValue==="" || desciptionValue==="" ||categoryValue===""||dateOfExpenceValue===""||expenenceAmoutValue===""){
       alert('Please Fill details')
     }
     else{
@@ -40,10 +50,11 @@ const CreateExpence = () => {
         categoryValue:categoryValue,
         dateOfExpenceValue:dateOfExpenceValue,
         expenenceAmoutValue:expenenceAmoutValue,
-        emailValue: emailValue
+        emailValue: emailValue,
+        lastUpdated: new Date().toISOString()
       }
       const storedData= JSON.parse(localStorage.getItem("createExpenceData"))|| []
-      storedData.push(createExpenceData)
+      storedData.splice(id,1,createExpenceData)
       localStorage.setItem('createExpenceData',JSON.stringify(storedData))
 
       naviagte('/ViewExpence')
@@ -62,7 +73,7 @@ const CreateExpence = () => {
   return (
     <div >
       <div>
-        <h1>Create New Expense</h1>
+        <h1>Edit Expense</h1>
       </div>
       <div>
         <form className='create-formExpence-container'>
@@ -70,7 +81,6 @@ const CreateExpence = () => {
           <input type="text" placeholder='Name of The Expence' name='name' value={nameValue}  onChange={nameHandler}/>
           <label>Email</label>
           <input type="email" placeholder="Email" name="email" value={emailValue} onChange={e => setEmail(e.target.value)} />
-
           <label>Description</label>
           <input type='text' placeholder='Describe The Expence' name='desciption'  value={desciptionValue}  onChange={descriptionHandler}/>
           <label> Category</label>
@@ -97,4 +107,4 @@ const CreateExpence = () => {
   )
 }
 
-export default CreateExpence
+export default UpdtateExpence
