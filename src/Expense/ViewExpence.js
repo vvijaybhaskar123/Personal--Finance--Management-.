@@ -88,6 +88,7 @@ const UpateHndler=(id)=>{
         />
         <button onClick={NaviageToCreateExpence}>New Expence</button>
       </div>
+    <div className="table-responisve">
       <table>
         <tr>
           <th>Name</th>
@@ -128,6 +129,7 @@ const UpateHndler=(id)=>{
           );
         })}
       </table>
+      </div>
       <div class="parent">
       <button className='btn' onClick={logoutHandler}>Log Out</button>
       </div>
