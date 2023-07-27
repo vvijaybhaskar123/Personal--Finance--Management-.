@@ -27,20 +27,7 @@ margin: 10px 10px 10px 10px;
  padding: 10px 25px 10px 15px; 
  border: 2px solid green;
 }
- /* .cancel {
-width: 10vw;
-padding:5px ;
-margin-top: 15px;
-border-radius: 10px;
-   
-}
-.Create{
-    width: 10vw;
-    padding:5px ;
-margin-top: 15px;
-border-radius: 10px;
-margin-left: 65px;
-} */
+
 .cancel-create{
     margin-top: 30px;
     width: 20vw;
