@@ -56,7 +56,7 @@ const UpateHndler=(id)=>{
   if (searchByDate) {
     result = result.filter((item) => {
       const { dateOfExpenceValue } = item;
-      return new Date(dateOfExpenceValue).getTime() >= new Date(searchByDate).getTime();
+      return new Date(dateOfExpenceValue).getTime() === new Date(searchByDate).getTime();
     });
   }
 

@@ -30,7 +30,7 @@ const CreateExpence = () => {
   }
   const handleSubmit =(e)=>{
     e.preventDefault()
-    if(nameValue==="" || emailValue==="" || desciptionValue==="" ||categoryValue===""||dateOfExpenceValue===""||expenenceAmoutValue===""){
+    if(nameValue==="" || emailValue==="" || desciptionValue==="" ||dateOfExpenceValue===""||expenenceAmoutValue===""){
       alert('Please Fill details')
     }
     else{
