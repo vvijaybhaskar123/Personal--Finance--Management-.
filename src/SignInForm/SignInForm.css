@@ -43,8 +43,8 @@ body {
     margin-top: 0px;
     color: red;
 }
-@media (max-width: 900px) {
-  .Form-container {
+@media (max-width: 1280px) {
+  .Form-containe {
     width: 80vw;
   }
 }
